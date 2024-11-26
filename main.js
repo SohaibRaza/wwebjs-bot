@@ -14,16 +14,19 @@ var myInterval;
 async function fetchpendingdata() {
   try {
     const getapi = api_end_points.getapi;
+    console.log("\n\n🚀 ~ fetchpendingdata ~ getapi:", getapi)
 
     const customAxios = axios.create({
       baseURL: getapi,
       timeout: 60000, //optional
       httpsAgent: new https.Agent({ keepAlive: true })
     });
+    console.log("\n\n🚀 ~ fetchpendingdata ~ customAxios:", customAxios)
 
     const response = await customAxios.get();
 
     var l_pending_data = await response.data.items;
+    console.log("\n\n\n🚀 ~ fetchpendingdata ~ l_pending_data:", l_pending_data)
     return l_pending_data;
   } catch (err) {
     console.log(err);
