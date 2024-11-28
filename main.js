@@ -30,7 +30,7 @@ async function fetchpendingdata() {
     console.log("\n\n\n🚀 ~ fetchpendingdata ~ l_pending_data:", l_pending_data)
     return l_pending_data;
   } catch (err) {
-    console.log(err);
+    console.log('Error:', err);
   }
 }
 
@@ -77,7 +77,7 @@ async function fetchMediaFromUrl(url) {
 async function process_start() {
   console.log("Pending SMS loading");
   var pending_sms = await fetchpendingdata();
- 
+
   // Set l_is_process to true to indicate processing is in progress
   l_is_process = true;
 
